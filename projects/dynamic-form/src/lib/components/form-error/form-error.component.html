@@ -1,0 +1,10 @@
+<div class="form-errors">
+    <ng-container *ngIf="errorOutput.isSingleOutput">
+        {{getSingleError()}}
+    </ng-container>
+    <ng-container *ngIf="!errorOutput.isSingleOutput && control.errors">
+        <ng-container *ngFor="let key of objectKeys(control.errors)">
+            <span>{{getError(key)}}</span>
+        </ng-container>
+    </ng-container>
+</div>

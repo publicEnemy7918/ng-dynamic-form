@@ -1,0 +1,46 @@
+.form-field {
+  position: relative;
+  margin-bottom: 25px;
+
+  &.error {
+    input, select, textarea {
+      border-color: #ff1b47;
+    }
+  }
+
+  &__label {
+    color: #252525;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px
+  }
+
+  input, select, textarea {
+    outline: none;
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    border: 1px solid #797979;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    &:disabled {
+      background: #eee;
+    }
+  }
+}
+
+form.form {
+  button {
+    min-width: 150px;
+    padding: 10px 5px;
+    border: 0;
+    color: #fff;
+    text-transform: uppercase;
+    background: #ffab53;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+  }
+}
+

@@ -1,0 +1,22 @@
+<div class="form-native-select">
+    <div class=form-field [ngClass]="{'error': getIsShowError()}">
+        <span class="form-field__label" *ngIf="settings.label">{{settings.label}}</span>
+        <div class="form-native-select__wrapper">
+            <select
+                    [formControl]="control"
+                    (ngModelChange)="onChange(control.value)"
+                    [multiple]="settings.multiple"
+            >
+                <option *ngFor="let option of settings.options"
+                        [ngValue]="option.value || option"
+                        [selected]="control.value === option.value || control.value === option"
+                >
+                    {{getLabel(option)}}
+                </option>
+            </select>
+            <span *ngIf="!settings.multiple" class="form-native-select__arrow"></span>
+        </div>
+        <app-form-error *ngIf="getIsShowError()" [control]="control"
+                        [errorOutput]="settings.errorOutput"></app-form-error>
+    </div>
+</div>

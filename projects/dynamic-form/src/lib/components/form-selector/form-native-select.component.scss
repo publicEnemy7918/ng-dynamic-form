@@ -1,0 +1,28 @@
+.form-native-select {
+  select {
+    appearance: none;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    z-index: -1;
+    border: 5px solid transparent;
+    border-top: 5px solid #797979;
+
+  }
+
+  &__wrapper {
+    position: relative;
+
+    .form-native-select__arrow {
+      top: calc(50% - 2.5px);
+      right: 10px;
+    }
+  }
+}

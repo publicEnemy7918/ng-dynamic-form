@@ -1,0 +1,12 @@
+<div class="form-checkbox">
+    <div class="form-field">
+        <label>
+            <input type="checkbox"
+                   [formControl]="control"
+                   (ngModelChange)="onChange($event)"
+            >
+            <span class="form-checkbox__box"></span>
+            <span class="form-field__label" *ngIf="settings.label">{{settings.label}}</span>
+        </label>
+    </div>
+</div>

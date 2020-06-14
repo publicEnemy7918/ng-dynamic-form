@@ -1,0 +1,16 @@
+<div class="form-textarea">
+    <div class=form-field [ngClass]="{'error': getIsShowError(), 'focus': isFocus}">
+        <span class="form-field__label" *ngIf="settings.label">{{settings.label}}</span>
+        <textarea
+                [style.resize]="settings.isResize ? 'auto' : 'none'"
+                [formControl]="control"
+                [placeholder]="settings.placeholder || ''"
+                (ngModelChange)="onChange($event)"
+                (blur)="onBlur()"
+                (focus)="isFocus = true"
+        ></textarea>
+
+        <app-form-error *ngIf="getIsShowError()" [control]="control" [errorOutput]="settings.errorOutput"></app-form-error>
+    </div>
+</div>
+
